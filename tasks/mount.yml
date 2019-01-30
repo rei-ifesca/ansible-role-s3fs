@@ -13,7 +13,7 @@
   file:
     path: '{{ s3fs_passwd_path }}'
     mode: 'u+rw,go+r'
-    owner: '{{ ansible_user_id }}'
+    owner: '{{ s3fs_passwd_file_owner }}'
     state: 'directory'
 
 - name: Make sure the access keys of buckets are present
@@ -22,7 +22,7 @@
     src: passwd-s3fs_j2
     dest: "{{ s3fs_passwd_path }}/{{ s3fs_passwd_file }}"
     mode: 0640
-    owner: "{{ ansible_user_id }}"
+    owner: "{{ s3fs_passwd_file_owner }}"
   with_items: "{{ s3fs_buckets }}"
   notify: restart s3fs
   no_log: True

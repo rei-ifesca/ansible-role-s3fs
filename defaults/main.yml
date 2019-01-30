@@ -10,5 +10,6 @@ s3fs_buckets: []
 s3fs_add_to_fstab: True
 s3fs_passwd_path: '/etc/s3fs/passwd'
 s3fs_passwd_file: 'passwd-s3fs'
+s3fs_passwd_file_owner: '{{ ansible_user_id }}'
 s3fs_daemon: '/usr/bin/s3fs'
 
