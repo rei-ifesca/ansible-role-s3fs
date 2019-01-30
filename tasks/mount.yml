@@ -8,6 +8,14 @@
   ignore_errors: yes
   no_log: True
 
+- name: Ensure that template directories exist
+  become: yes
+  file:
+    path: '{{ passwd_path }}'
+    mode: 'u+rw,go+r'
+    owner: '{{ ansible_user_id }}'
+    state: 'directory'
+
 - name: Make sure the access keys of buckets are present
   become: yes
   template:

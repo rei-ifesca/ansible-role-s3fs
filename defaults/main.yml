@@ -8,7 +8,8 @@ s3fs:
   #    secretAccessKey: "secretAccessKey"
   #    options: "allow_other,use_cache=/tmp,max_stat_cache_size=100000,uid=33,gid=33,umask=002"
   add_to_fstab: True
-  passwd_file: '/etc/passwd-s3fs'
+  passwd_path: '/etc/s3fs/passwd'
+  passwd_file: '{{ passwd_path }}/passwd-s3fs'
   daemon: '/usr/bin/s3fs'
   packages:
     - s3fs
