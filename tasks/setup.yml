@@ -1,9 +1,7 @@
 ---
 - name: Install s3fs
   become: yes
-  package:
-    name: "s3fs"
-    state: present
+  command: apt install -yq s3fs
 
 - name: Add read permission to other users
   become: yes
