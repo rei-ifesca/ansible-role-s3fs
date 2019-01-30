@@ -11,7 +11,7 @@
 - name: Ensure that template directories exist
   become: yes
   file:
-    path: '{{ passwd_path }}'
+    path: '{{ s3fs.passwd_path }}'
     mode: 'u+rw,go+r'
     owner: '{{ ansible_user_id }}'
     state: 'directory'
