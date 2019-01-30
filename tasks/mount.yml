@@ -21,7 +21,7 @@
   template:
     src: passwd-s3fs.j2
     dest: "{{ s3fs_passwd_path }}/{{ s3fs_passwd_file }}"
-    mode: 0640
+    mode: 0600
     owner: "{{ s3fs_passwd_file_owner }}"
   with_items: "{{ s3fs_buckets }}"
   notify: restart s3fs
