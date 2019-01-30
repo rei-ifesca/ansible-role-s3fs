@@ -1,5 +1,5 @@
 ---
-- debug: var=s3fs verbosity=1
+- debug: var=s3fs_buckets verbosity=1
   tags: vars
 
 - include: setup.yml
