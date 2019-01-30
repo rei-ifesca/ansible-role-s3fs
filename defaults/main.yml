@@ -11,7 +11,4 @@ s3fs:
   passwd_path: '/etc/s3fs/passwd'
   passwd_file: '{{ passwd_path }}/passwd-s3fs'
   daemon: '/usr/bin/s3fs'
-  packages:
-    - s3fs
-    - fuse
 

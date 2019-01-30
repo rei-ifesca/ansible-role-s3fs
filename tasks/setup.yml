@@ -2,9 +2,8 @@
 - name: Install s3fs
   become: yes
   package:
-    name: "{{ item }}"
+    name: "s3fs"
     state: present
-  with_items: "{{ s3fs.packages }}"
 
 - name: Add read permission to other users
   become: yes
